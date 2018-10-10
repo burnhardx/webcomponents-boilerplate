@@ -1,0 +1,20 @@
+{
+  "name": "webcomponents-boilerplate",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "server": "npm run publish:components && node src/server.js",
+    "test": "not implemented",
+    "assemble:components": "rm -rf build/* && node node_modules/.bin/assemble-components src/components build",
+    "publish:components": "npm run assemble:components && rm -rf public/components/* && cp -rf build/* public/components/",
+    "watch:components": "watch 'npm run publish:components' src/components"
+  },
+  "devDependencies": {
+    "assembleComponents": "git+https://github.com/burnhardx/assemble-components.git",
+    "express": "^4.16.3",
+    "watch": "^1.0.2"
+  },
+  "author": "Bernhard Vollmer <burn.hard.x@gmail.com>",
+  "license": "MIT"
+}
